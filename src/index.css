@@ -1,0 +1,71 @@
+/* Design System Variables */
+:root {
+  --color-bg: #f8faf9;
+  --color-surface: #ffffff;
+  --color-surface-alt: #f1f5f4;
+  --color-border: #e3e8e5;
+  --color-primary: #2e7d32; /* deep green */
+  --color-primary-accent: #43a047; /* accent green */
+  --color-primary-rgb: 46,125,50;
+  --color-danger: #e53935;
+  --color-warning: #fb8c00;
+  --color-text: #253327;
+  --color-text-light: #5f6f63;
+  --gradient-app: linear-gradient(135deg,#eef5f1 0%,#d9e7dd 45%,#c7ddce 100%);
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.06);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+  --shadow-lg: 0 8px 28px rgba(0,0,0,0.12);
+  --transition: 0.25s cubic-bezier(.4,.0,.2,1);
+  --font-sans: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --container-max: 1240px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 32px;
+  --space-8: 40px;
+}
+
+/* Global Resets */
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background: var(--color-bg);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+}
+
+h1,h2,h3,h4,h5 { font-family: var(--font-serif); color: var(--color-text); letter-spacing: .5px; }
+h1 { font-size: clamp(2.4rem,5vw,3.4rem); }
+h2 { font-size: clamp(1.9rem,4vw,2.6rem); }
+h3 { font-size: clamp(1.4rem,3vw,1.9rem); }
+
+p { font-size: 1.05rem; }
+
+code { font-family: 'Source Code Pro', Menlo, Monaco, Consolas, 'Courier New', monospace; }
+
+a { transition: color var(--transition), opacity var(--transition); text-decoration: none; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--color-primary-accent); outline-offset: 3px; }
+
+button { font-family: var(--font-sans); }
+
+/* Utility Classes */
+.container { max-width: var(--container-max); margin: 0 auto; padding: 0 var(--space-6); }
+.elevate-sm { box-shadow: var(--shadow-sm); }
+.elevate-md { box-shadow: var(--shadow-md); }
+.elevate-lg { box-shadow: var(--shadow-lg); }
+.glass { backdrop-filter: blur(12px); background: rgba(255,255,255,.55); }
+.fade-in { animation: fade .6s ease; }
+
+@keyframes fade { from { opacity:0; transform: translateY(8px);} to { opacity:1; transform: translateY(0);} }

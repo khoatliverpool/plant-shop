@@ -1,0 +1,71 @@
+/* Enhanced Landing Page Styling */
+.landing-page {
+  min-height: 100vh;
+  background-image: linear-gradient(rgba(34,48,38,.55),rgba(34,48,38,.55)), url('https://images.unsplash.com/photo-1466781783364-36c955e42a7f?q=80&w=2071');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: var(--space-8) var(--space-6);
+}
+
+.landing-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: #fff;
+  max-width: 880px;
+  padding: clamp(2rem,5vw,3.5rem) clamp(2rem,5vw,3.5rem) clamp(2.4rem,6vw,4rem);
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(14px);
+  background: linear-gradient(135deg,rgba(255,255,255,.12),rgba(255,255,255,.06));
+  box-shadow: 0 8px 34px rgba(0,0,0,.35);
+  animation: rise .9s cubic-bezier(.16,.8,.3,1);
+}
+@keyframes rise { from { opacity:0; transform: translateY(30px);} to { opacity:1; transform: translateY(0);} }
+
+.company-name {
+  font-size: clamp(3rem,8vw,4.2rem);
+  margin-bottom: var(--space-6);
+  font-weight: 700;
+  font-family: var(--font-serif);
+  color: var(--color-primary-accent);
+  line-height: 1.05;
+  text-shadow: 0 6px 22px rgba(0,0,0,.55);
+}
+
+.company-description {
+  font-size: clamp(1.05rem,2.2vw,1.25rem);
+  line-height: 1.7;
+  margin: 0 auto var(--space-7);
+  max-width: 680px;
+  font-weight: 500;
+  text-shadow: 0 2px 12px rgba(0,0,0,.6);
+}
+
+.get-started-btn {
+  padding: 1.05rem 3.2rem;
+  font-size: 1.15rem;
+  background: linear-gradient(135deg,var(--color-primary) 0%,var(--color-primary-accent) 100%);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: .5px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 6px 24px rgba(var(--color-primary-rgb),.45);
+  transition: var(--transition);
+}
+.get-started-btn:before { content:''; position:absolute; inset:0; background:radial-gradient(circle at 30% 30%,rgba(255,255,255,.25),transparent 65%); opacity:.4; mix-blend-mode: overlay; }
+.get-started-btn:hover { transform: translateY(-4px); box-shadow: 0 10px 34px rgba(var(--color-primary-rgb),.5); }
+.get-started-btn:active { transform: translateY(0); }
+
+@media (max-width: 640px) {
+  .landing-content { padding: 2.2rem 1.6rem 3rem; }
+  .company-name { font-size: clamp(2.6rem,10vw,3.2rem); }
+  .company-description { font-size: 1rem; }
+}
